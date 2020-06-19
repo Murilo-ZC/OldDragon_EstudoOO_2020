@@ -2,15 +2,23 @@ package dragon.pack.ote.personagens;
 
 import dragon.pack.ote.dados.Dado;
 import dragon.pack.ote.enumeracoes.AtributosPersonagem;
+import dragon.pack.ote.enumeracoes.Classes;
+import dragon.pack.ote.enumeracoes.Racas;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Personagem {
     private Map<AtributosPersonagem, Integer> atributos;
+    private final String nome;
+    private final Racas raca;
+    private final Classes classe;
 
-    public Personagem() {
+    public Personagem(String nome, Racas raca, Classes classe) {
         atributos = gerarAtributos();
+        this.nome = nome;
+        this.raca = raca;
+        this.classe = classe;
     }
 
     private final Map<AtributosPersonagem, Integer> gerarAtributos() {
@@ -28,7 +36,10 @@ public class Personagem {
     @Override
     public String toString() {
         return "Personagem{" +
-                "atributos=" + atributos +
+                "atributos=" + atributos + "," +
+                "nome=" + this.nome + "," +
+                "raca=" + this.raca + "," +
+                "classe=" + this.classe +
                 '}';
     }
 }
